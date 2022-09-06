@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New todo</title>
+</head>
+<body>
+<hr>
+<div style="text-align: center;">Создание нового дела</div>
+<hr>
+<form th:method="POST" th:action="@{/todos}" th:object="${todo}">
+  <label for="text">Введите текст дела: </label>
+  <input type="text" th:field="*{text}" id="text"/>
+  <br/>
+  Введите количество дней на выполнение:<input type="number" name="days"/>
+  <br/>
+  <input type="submit" value="Создать задачу!"/>
+</form>
+<hr>
+</body>
+</html>

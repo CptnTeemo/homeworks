@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<!--    // сюда пишутся changeSets-->
+    <changeSet id="create-table-details" author="Alexandr Belolipetskiy">
+        <createTable tableName="details">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="todo_details" type="varchar(300)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-new-column-notes" author="Alexandr Belolipetskiy">
+        <addColumn tableName="details">
+            <column name="notes" type="varchar(300)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
